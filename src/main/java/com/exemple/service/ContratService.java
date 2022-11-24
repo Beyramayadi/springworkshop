@@ -10,11 +10,13 @@ import java.util.List;
 public interface ContratService  {
 
 
-    public Contrat saveContrat(Contrat contrat);
+     Contrat saveContrat(Contrat contrat);
 
 
 
     public Contrat getContrat (long id);
     public void deleteContrat(long id);
     List<Contrat> getAll();
+     Contrat updateContrat (Contrat contrat);
+     Contrat getContratById(long id);
 }

@@ -26,9 +26,10 @@ public class Contrat implements Serializable {
     private Date dateDebutContrat;
     @Temporal (TemporalType.DATE)
     private Date dateFinContrat;
-    @Column(name="")
+    @Column(name="specialite")
     private Specialite specialite;
-    @Column(name="")
+  //  @Column(name="archive")
+    @Column(nullable = true,name="archive")
     private boolean archive;
 
 @ManyToOne

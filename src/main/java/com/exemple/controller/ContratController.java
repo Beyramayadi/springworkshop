@@ -40,10 +40,25 @@ public class ContratController {
     @Operation(description = "add a contrat")
 
     @PostMapping("/api/contrat")
-    public ResponseEntity addContrat(Contrat contrat)
+    public ResponseEntity addContrat(@RequestBody Contrat contrat)
    {
        cS.saveContrat(contrat);
        return  new ResponseEntity<>(HttpStatus.OK);
    }
 
+    @Operation(description="Update Contrat")
+    @PutMapping(value="/api/contrat")
+    public ResponseEntity updateContrat(@RequestBody Contrat contrat)
+   {
+       cS.updateContrat(contrat);
+       return new ResponseEntity<>(HttpStatus.OK);
+   }
+
+   @Operation(description = "get by id")
+    @GetMapping(value = "/api/contrat/{id}")
+    public Contrat getContratById(@PathVariable long id)
+   {
+       return cS.getContratById(id);
+
+   }
 }
